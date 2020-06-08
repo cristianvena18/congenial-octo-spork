@@ -26,11 +26,11 @@ class InferableLocator implements HandlerLocator
     public function getHandlerForCommand($commandName)
     {
         $handler = preg_replace(
-            ['/bCommand/b'],
+            ['/Command\b/'],
             ['Handler'],
             $commandName
         );
-        dd($handler);
+
         if (!class_exists($handler)) {
             throw MissingHandlerException::forCommand($commandName);
         }

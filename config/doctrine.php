@@ -23,11 +23,11 @@ return [
     'managers'                   => [
         'default' => [
             'dev'           => env('APP_DEBUG', false),
-            'meta'          => env('DOCTRINE_METADATA', 'xml'),
+            'meta'          => env('DOCTRINE_METADATA', 'php'),
             'connection'    => env('DB_CONNECTION', 'mysql'),
             'namespaces'    => ['Domain\\Entities'],
             'paths'         => [
-                base_path('infrastructure/Persistence/Mapping')
+                base_path('infrastructure/Persistence/Mappings')
             ],
             'repository'    => Doctrine\ORM\EntityRepository::class,
             'proxies'       => [

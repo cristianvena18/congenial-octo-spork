@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Presentation\Http\Actions\Products\IndexProductAction;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,11 +21,9 @@ Route::get('/', function () {
 
 
 Route::group(['prefix' => 'products'], function () {
-    Route::get('/', function () {
-
-    });
+    Route::get('/', IndexProductAction::class);
 
     Route::get('/new', function () {
-
+        return view('productNew');
     });
 });

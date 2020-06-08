@@ -2,11 +2,15 @@
 
 namespace Infrastructure\Providers;
 
+use Application\Services\Products\ProductService;
+use Application\Services\Products\ProductServiceInterface;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use Infrastructure\Cache\Provider\Redis\RedisProvider;
 use Infrastructure\Hash\HashManager;
 use Infrastructure\Hash\HashManagerInterface;
+use Presentation\Http\Validations\Utils\ValidatorService;
+use Presentation\Http\Validations\Utils\ValidatorServiceInterface;
 use Psr\Cache\CacheItemPoolInterface;
 use Redis;
 
@@ -33,6 +37,10 @@ class AppServiceProvider extends ServiceProvider
             return $client;
         });
         $this->app->bind(CacheItemPoolInterface::class, RedisProvider::class);
+
+        $this->app->bind(ValidatorServiceInterface::class, ValidatorService::class);
+
+        $this->app->bind(ProductServiceInterface::class, ProductService::class);
     }
 
     /**
