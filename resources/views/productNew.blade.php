@@ -4,6 +4,7 @@
     </head>
     <body>
         <form action="{{route('storeProduct')}}" method="POST">
+            @csrf
             <input name="name" required />
             <input name="description" required />
             <input name="price" type="number" required />
