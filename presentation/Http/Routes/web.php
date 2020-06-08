@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/products');
+});
+
+
+
+Route::group(['prefix' => 'products'], function () {
+    Route::get('/', function () {
+
+    });
+
+    Route::get('/new', function () {
+
+    });
 });
