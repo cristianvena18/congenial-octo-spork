@@ -3,6 +3,8 @@
         <title>{{'Products'}}</title>
     </head>
     <body>
+        <a href="{{route('createProductView')}}">Crear nuevo producto</a>
+        <br />
         <table>
             <thead>
                 <tr>Name</tr>

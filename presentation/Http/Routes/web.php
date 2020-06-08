@@ -25,5 +25,5 @@ Route::group(['prefix' => 'products'], function () {
 
     Route::get('/new', function () {
         return view('productNew');
-    });
+    })->name('createProductView');
 });
