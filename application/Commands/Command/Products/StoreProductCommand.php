@@ -35,27 +35,11 @@ class StoreProductCommand implements CommandInterface
     }
 
     /**
-     * @param string $name
-     */
-    public function setName(string $name): void
-    {
-        $this->name = $name;
-    }
-
-    /**
      * @return string
      */
     public function getDescription(): string
     {
         return $this->description;
-    }
-
-    /**
-     * @param string $description
-     */
-    public function setDescription(string $description): void
-    {
-        $this->description = $description;
     }
 
     /**
@@ -67,26 +51,10 @@ class StoreProductCommand implements CommandInterface
     }
 
     /**
-     * @param float $price
-     */
-    public function setPrice(float $price): void
-    {
-        $this->price = $price;
-    }
-
-    /**
      * @return int
      */
     public function getStock(): int
     {
         return $this->stock;
-    }
-
-    /**
-     * @param int $stock
-     */
-    public function setStock(int $stock): void
-    {
-        $this->stock = $stock;
     }
 }
